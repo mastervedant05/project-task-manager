@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TaskMaster - Personal Task Manager</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>📝 TaskMaster</h1>
+            <p>Your personal task management solution</p>
+        </header>
+
+        <div class="task-form">
+            <input type="text" id="taskInput" placeholder="Enter a new task..." maxlength="100">
+            <select id="prioritySelect">
+                <option value="low">Low Priority</option>
+                <option value="medium" selected>Medium Priority</option>
+                <option value="high">High Priority</option>
+            </select>
+            <button onclick="addTask()">Add Task</button>
+        </div>
+
+        <div class="filters">
+            <button onclick="filterTasks('all')" class="active">All</button>
+            <button onclick="filterTasks('pending')">Pending</button>
+            <button onclick="filterTasks('completed')">Completed</button>
+        </div>
+
+        <div id="taskList" class="task-list">
+            <!-- Tasks will be dynamically added here -->
+        </div>
+
+        <div class="stats">
+            <div>Total: <span id="totalTasks">0</span></div>
+            <div>Completed: <span id="completedTasks">0</span></div>
+            <div>Pending: <span id="pendingTasks">0</span></div>
+        </div>
+    </div>
+
+    <script src="scripts/app.js"></script>
+</body>
+</html>
